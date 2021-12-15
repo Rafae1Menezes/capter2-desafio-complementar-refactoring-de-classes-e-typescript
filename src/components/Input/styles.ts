@@ -43,10 +43,11 @@ export const Container = styled.div<ContainerProps>`
       }
 
       ${props =>
-         props.isFilled &&
+         (props.isFilled || props.isFocused) &&
          css`
             color: #ff9000;
          `}
+
    }
 
    svg {
