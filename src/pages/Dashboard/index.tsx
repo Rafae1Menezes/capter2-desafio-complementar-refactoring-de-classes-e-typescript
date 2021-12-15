@@ -7,14 +7,7 @@ import ModalAddFood from '../../components/ModalAddFood';
 import ModalEditFood from '../../components/ModalEditFood';
 import { FoodsContainer } from './styles';
 
-interface Ifood{
-   id: number
-   available: boolean
-   description: string
-   image: string
-   name: string
-   price: string
-}
+import { Ifood } from '../../types';
 
 function Dashboard () {
    const [foods, setFoods] = useState<Ifood[]>([])
@@ -30,9 +23,6 @@ function Dashboard () {
 
       getFoods()      
    }, [])
-
-   console.log('foods', foods)
-   console.log('edit', editingFood)
 
   const handleAddFood = async (food: Ifood) => {
     try {
